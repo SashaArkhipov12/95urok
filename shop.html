@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<input type="" class="search">
+		<button class="btn btn-success">Поиск </button>
+		<div class="row">
+
+		</div>
+	
+	</div>
+<script>
+	let row = document.querySelector(".row");
+	let search = document.querySelector(".search");
+	let btn = document.querySelector(".btn");
+
+	let array =[
+		{
+			name:"имя: куртка",
+			price:10000,
+			url:"kurtka.jpg",
+			brand:"компания: h&m",
+			size:"размер: M",
+			gender:"пол: женский"
+
+		},
+		
+		{
+			name:"имя: джинсы",
+			price:8000,
+			url:"5.jpg",
+			brand:"компания: levis",
+			size:"размер: L",
+			gender:"пол: мужской"
+
+		},
+		{
+			name:"имя: джинсы",
+			price:2500,
+			url:"jeanse1.jpg",
+			brand:"компания: zara",
+			size:"размер: M",
+			gender:"пол: женский"
+
+		},
+		{
+			name:"имя: джинсы",
+			price:3500,
+			url:"jeanse2.jpg",
+			brand:"компания: zara",
+			size:"размер: L",
+			gender:"пол: женский"
+
+		},
+		{
+			name:"имя: футболка",
+			price:1200,
+			url:"tshirt2.jpg",
+			brand:"компания: asics",
+			size:"размер: L",
+			gender:"пол: мужской"
+
+		},
+		{
+			name:"имя: футболка",
+			price:900,
+			url:"tshirt.jpg",
+			brand:"компания: h&m",
+			size:"размер: XS",
+			gender:"пол: женский"
+
+		},
+		{
+			name:"имя: куртка",
+			price:15000,
+			url:"20.jpg",
+			brand:"компания: the north face",
+			size:"размер: L",
+			gender:"пол: мужской"
+
+		},
+		{
+			name:"имя: шапка",
+			price:900,
+			url:"9.jpg",
+			brand:"компания: nike",
+			size:"размер: нет",
+			gender:"пол: мужской"
+
+		},
+		{
+			name:"имя: носки",
+			price:500,
+			url:"socks.jpg",
+			brand:"компания: bonprix",
+			size:"размер: нет",
+			gender:"пол: мужской"
+
+		},
+
+	];
+	btn.onclick = function(){
+		row.innerHTML = "";
+		for(let index = 0; index<9; index = index + 1){
+				if(array[index].name == search.value || array[index].price == search.value ||
+					array[index].brand == search.value ||
+					array[index].size == search.value ||
+					array[index].gender == search.value){
+					let elem = document.createElement("div");
+					row.appendChild(elem);
+					elem.classList.add("col-3");
+					let image = document.createElement("img");
+					elem.appendChild(image);
+					image.src = array[index].url;
+					image.style.height = "200px";
+					let textName = document.createElement("h5");
+					elem.appendChild(textName);
+					textName.innerHTML = array[index].name;
+					let textPrice = document.createElement("h5");
+					elem.appendChild(textPrice);
+					textPrice.innerHTML = array[index].price;
+					let textBrand = document.createElement("h5");
+					elem.appendChild(textBrand);
+					textBrand.innerHTML = array[index].brand;
+					let textSize = document.createElement("h5");
+					elem.appendChild(textSize);
+					textSize.innerHTML = array[index].size;
+					let textGender = document.createElement("h5");
+					elem.appendChild(textGender);
+					textGender.innerHTML = array[index].gender;
+				}	
+			}
+ 		}
+ 	for(let index = 0; index<9; index = index + 1){
+		//if(array[index].price>=500 && array[index].price<=1500){
+			let elem = document.createElement("div");
+			row.appendChild(elem);
+			elem.classList.add("col-3");
+			let image = document.createElement("img");
+			elem.appendChild(image);
+			image.src = array[index].url;
+			image.style.height = "200px";
+			let textName = document.createElement("h5");
+			elem.appendChild(textName);
+			textName.innerHTML = array[index].name;
+			let textPrice = document.createElement("h5");
+			elem.appendChild(textPrice);
+			textPrice.innerHTML = array[index].price;
+			let textBrand = document.createElement("h5");
+			elem.appendChild(textBrand);
+			textBrand.innerHTML = array[index].brand;
+			let textSize = document.createElement("h5");
+			elem.appendChild(textSize);
+			textSize.innerHTML = array[index].size;
+			let textGender = document.createElement("h5");
+			elem.appendChild(textGender);
+			textGender.innerHTML = array[index].gender;
+		}	
+	//}
+
+</script>
+</body>
+</html>
